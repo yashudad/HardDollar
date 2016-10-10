@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SmokeTest"  parallel="tests">
+  <test name="HardDollar" >
+  	<parameter name="BROWSERTYPE" value="*chrome" />
+	<parameter name="USERNAME" value="yashu.dadheech@ineight.com" />
+	<parameter name="PASSWORD" value="Intra123" />
+	
+    <classes>
+      <class name="test.hd.HDTest"/>  
+      <!-- <methods>
+              <include name="test"/>              
+        </methods>  --> 
+       </classes>
+  </test>
+  </suite>

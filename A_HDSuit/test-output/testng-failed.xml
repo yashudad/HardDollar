@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SmokeTest]" parallel="tests">
+  <parameter name="PASSWORD" value="Intra123"/>
+  <parameter name="USERNAME" value="yashu.dadheech@ineight.com"/>
+  <parameter name="BROWSERTYPE" value="*chrome"/>
+  <test name="HardDollar(failed)" parallel="tests">
+    <parameter name="PASSWORD" value="Intra123"/>
+    <parameter name="USERNAME" value="yashu.dadheech@ineight.com"/>
+    <parameter name="BROWSERTYPE" value="*chrome"/>
+    <classes>
+      <class name="test.hd.HDTest">
+        <methods>
+          <include name="login"/>
+          <include name="test"/>
+        </methods>
+      </class> <!-- test.hd.HDTest -->
+    </classes>
+  </test> <!-- HardDollar(failed) -->
+</suite> <!-- Failed suite [SmokeTest] -->
