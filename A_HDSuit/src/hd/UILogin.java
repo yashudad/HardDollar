@@ -67,8 +67,8 @@ public class UILogin {
 	
 	List<WebElement> accounts=driver.findElements(By.cssSelector(LocatorConstants.ACCOUNT));
 	accounts.get(0).click();
-	driver.switchTo().alert().accept();
-	driver.switchTo().alert().dismiss(); 
+	//driver.switchTo().alert().accept();
+	//driver.switchTo().alert().dismiss(); 
 	loginButton = driver.findElement(By.cssSelector(LocatorConstants.NAME_BUTTON_LOGIN));
 	loginButton.click();
 	
