@@ -3,11 +3,11 @@
 <suite name="Failed suite [SmokeTest]" parallel="tests">
   <parameter name="PASSWORD" value="Intra123"/>
   <parameter name="USERNAME" value="yashu.dadheech@ineight.com"/>
-  <parameter name="BROWSERTYPE" value="*chrome"/>
+  <parameter name="BROWSERTYPE" value="*ie"/>
   <test name="HardDollar(failed)" parallel="tests">
     <parameter name="PASSWORD" value="Intra123"/>
     <parameter name="USERNAME" value="yashu.dadheech@ineight.com"/>
-    <parameter name="BROWSERTYPE" value="*chrome"/>
+    <parameter name="BROWSERTYPE" value="*ie"/>
     <classes>
       <class name="test.hd.HDTest">
         <methods>

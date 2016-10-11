@@ -1,5 +1,6 @@
 package hd;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
@@ -20,7 +23,7 @@ public class UILogin {
 
 	
 	public static WebDriver driver;
-	public static WebElement userName, userPassword, loginOrRegisterButton,loginButton, workAccount,accounts[];
+	public static WebElement userName, userPassword, loginOrRegisterButton,loginButton, workAccount,accounts[],menuSettings,infolink[];
 	public static final String baseURL = "https://qa-daily.hds.ineight.com/AppCore/Projects";
 	
 	//public static String browserType="";
@@ -71,22 +74,22 @@ public class UILogin {
 	//driver.switchTo().alert().dismiss(); 
 	loginButton = driver.findElement(By.cssSelector(LocatorConstants.NAME_BUTTON_LOGIN));
 	loginButton.click();
-	
 	Thread.sleep(1000);
 	
+	List<WebElement> infolink=driver.findElements(By.cssSelector(LocatorConstants.INFO));
+	infolink.get(0).click();
+	
+	/*menuSettings=driver.findElement(By.cssSelector(LocatorConstants.MENULINK));
+	menuSettings.click();
+	
+	//driver.findElement(By.xpath("//a[text()='View seats']")).get(index).click()
+		
+	WebDriverWait waitForMenuLoad = new WebDriverWait(driver, 60);
+	waitForMenuLoad.until(ExpectedConditions.elementSelectionStateToBe(menuSettings, true));*/
+	
+	}
+	
 /*	try {
-		WebDriverWait waitLoginError = new WebDriverWait(driver, 60);
-		waitLoginError.until(ExpectedConditions.visibilityOfElementLocated((By
-						.cssSelector(LocatorConstants.NAME_BUTTON_LOGINVERIFICATION_LINK))));
-	}
-	catch (TimeoutException e)
-	{
-		Reporter.log("Login session timed out");
-	}
-	
-	
-	
-	try {
 		WebElement error = driver.findElement(By.cssSelector(LocatorConstants.NAME_LABEL_LOGINERROR));
 		String errorText = error.getText();
 		String errorMessage = "Your login attempt has failed. The username or password may be incorrect, or your location or login time may be restricted. Please contact the administrator at your company for help.";
@@ -131,7 +134,7 @@ public class UILogin {
 
 */
 	
-	} catch (NoSuchElementException e) {
+	 catch (NoSuchElementException e) {
 
 		Reporter.log("No error found on login. Login is successful");
 	}	
